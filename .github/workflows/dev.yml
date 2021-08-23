@@ -46,15 +46,21 @@ jobs:
         args: --follow-symlinks --delete
       env:
         AWS_S3_BUCKET: vinayak-ecommerce-bucket
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        AWS_REGION: ${{ secrets.AWS_REGION }}
+#         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_ACCESS_KEY_ID: AKIA3U5GRFYHAAVMYD66
+#         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_SECRET_ACCESS_KEY: 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
+#         AWS_REGION: ${{ secrets.AWS_REGION }}
+        AWS_REGION: us-west-2
         SOURCE_DIR: "build"
     - name: Create CloudFront Cache Invalidation
       uses: chetan/invalidate-cloudfront-action@master
       env:
-       DISTRIBUTION: ${{ secrets.AWS_CF_DISTRIBUTION_ID }}
+#        DISTRIBUTION: ${{ secrets.AWS_CF_DISTRIBUTION_ID }}
+       DISTRIBUTION: E1UI18E7PBSGR6
        PATHS: '/*'
-       AWS_REGION: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+       AWS_REGION:  us-west-2
+#        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+       AWS_ACCESS_KEY_ID: AKIA3U5GRFYHAAVMYD66
+#        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+       AWS_SECRET_ACCESS_KEY: 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
