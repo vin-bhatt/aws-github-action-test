@@ -39,7 +39,7 @@ jobs:
         echo "this is test"
     - name: Build Creation
       run: |
-        npm build
+        npm run build
     - name: Deploy to S3
       uses: jakejarvis/s3-sync-action@master
       with:
